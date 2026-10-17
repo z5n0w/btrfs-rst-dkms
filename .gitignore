@@ -1,0 +1,22 @@
+# Kbuild / out-of-tree module build artifacts
+# (a build tree is normally staged under /usr/src, not here; these patterns
+#  just keep a stray in-repo Build dir out of git)
+/build/
+*.o
+*.o.d
+*.ko
+*.mod
+*.mod.c
+.*.cmd
+.*.d
+.tmp_versions/
+Module.symvers
+modules.order
+Makefile.inc
+.cache.mk
+*.symvers
+
+# editor / OS cruft
+*.swp
+*~
+.DS_Store

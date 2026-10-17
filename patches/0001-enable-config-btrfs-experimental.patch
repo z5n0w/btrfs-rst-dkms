@@ -1,0 +1,18 @@
+Enable CONFIG_BTRFS_EXPERIMENTAL for the out-of-tree btrfs build.
+
+This is the ONLY change made to the upstream fs/btrfs tree. It unlocks the
+raid-stripe-tree (RST) incompat feature, which is otherwise excluded from
+BTRFS_FEATURE_INCOMPAT_SUPP unless CONFIG_BTRFS_EXPERIMENTAL is defined at
+compile time (see fs/fs.h).
+
+Apply from the root of a fs/btrfs source tree with:  patch -p1 < this-file
+
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
++subdir-ccflags-y += -DCONFIG_BTRFS_EXPERIMENTAL
+ 
+ # Subset of W=1 warnings
+ subdir-ccflags-y += -Wextra -Wunused -Wno-unused-parameter
+ subdir-ccflags-y += -Wmissing-declarations
