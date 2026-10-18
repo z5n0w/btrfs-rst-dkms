@@ -60,8 +60,19 @@ At install time, `scripts/prepare.sh`:
 │   ├── uninstall.sh      # dkms remove + restore distro module + clean up
 │   └── verify.sh         # confirm the loaded module really has RST
 ├── LICENSE               # GPL-2.0
-└── README.md
+├── README.md
+└── skills/
+    └── btrfs-rst-dkms/SKILL.md   # AI-assistant deployment skill
 ```
+
+## AI assistant deployment
+
+This repo ships an agent-readable skill at `skills/btrfs-rst-dkms/SKILL.md`.
+Point an AI assistant (Hermes Agent, Claude Code, …) at that file or at the
+repo, and it can recon a target host, install prerequisites, run
+`scripts/install.sh`, activate and verify the module, and handle the common
+failure modes. The skill covers only the kernel module; filesystem creation is
+out of scope.
 
 ## Requirements
 
