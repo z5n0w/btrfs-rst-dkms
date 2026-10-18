@@ -59,6 +59,7 @@ At install time, `scripts/prepare.sh`:
 │   ├── install.sh        # prepare + dkms add/build/install + swap + verify
 │   ├── uninstall.sh      # dkms remove + restore distro module + clean up
 │   └── verify.sh         # confirm the loaded module really has RST
+├── AGENTS.md             # guidance for AI agents editing this repo
 ├── LICENSE               # GPL-2.0
 ├── README.md
 └── skills/
